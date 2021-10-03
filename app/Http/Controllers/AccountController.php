@@ -43,7 +43,11 @@ class AccountController extends Controller
 
             $account->transactions()->save($transaction);
 
-            return response(['message' => 'Sucesso atualizando o saldo da conta!'], 200);
+            return response([
+                'message' => 'Sucesso atualizando o saldo da conta!',
+                'newBalance' => $account->current_balance,
+                'transactionData' => $transaction,
+            ], 200);
         } else {
             return response(['message' => 'Erro ao atualizar o saldo da conta.'], 500);
         }
@@ -77,7 +81,11 @@ class AccountController extends Controller
 
             $account->transactions()->save($transaction);
 
-            return response(['message' => 'Sucesso atualizando o saldo da conta!'], 200);
+            return response([
+                'message' => 'Sucesso atualizando o saldo da conta!',
+                'newBalance' => $account->current_balance,
+                'transactionData' => $transaction,
+            ], 200);
         } else {
             return response(['message' => 'Erro ao atualizar o saldo da conta.'], 500);
         }

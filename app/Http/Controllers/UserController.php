@@ -14,9 +14,12 @@ class UserController extends Controller
 
         $userAccount = User::find($userData->id)->account()->first();
 
+        $accountTransactions = $userAccount->transactions()->orderBy('postdate', 'desc')->get();
+
         $response = [
             'userData' => $userData,
             'userAccount' => $userAccount,
+            'accountTransactions' => $accountTransactions,
         ];
 
         return response($response, 200);
