@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
 
+    /**
+     * Retorna os dados da conta de um usuário com suas respectivas transações
+     *
+     * @param  \Request  $request
+     * @return response
+     *
+     */
     public function getUserAccountInfo(Request $request)
     {
         $userData = $request->user();

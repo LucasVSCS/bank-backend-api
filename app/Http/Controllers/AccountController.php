@@ -12,6 +12,14 @@ use Illuminate\Support\Str;
 
 class AccountController extends Controller
 {
+
+    /**
+     * Realiza o saque referente a conta do usuário logado e gera sua respectiva transação
+     *
+     * @param  \Request  $request
+     * @return response
+     *
+     */
     public function withdrawAccountBalance(Request $request)
     {
 
@@ -54,6 +62,13 @@ class AccountController extends Controller
 
     }
 
+    /**
+     * Realiza o depósito referente a conta do usuário logado e gera sua respectiva transação
+     *
+     * @param  \Request  $request
+     * @return response
+     *
+     */
     public function depositAccountBalance(Request $request)
     {
 
@@ -92,6 +107,13 @@ class AccountController extends Controller
 
     }
 
+    /**
+     * Retorna todos os dados da conta do usuário dado seu ID
+     *
+     * @param  \Request  $request
+     * @return response
+     *
+     */
     public function getAuthUserAccountData($request)
     {
         $userData = $request->user();

@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+
+    /**
+     * Realizar o login dado as credenciais de um usuário
+     *
+     * @param  \Request  $request
+     * @return response
+     *
+     */
     public function login(Request $request)
     {
         $loginData = $request->validate([
@@ -25,6 +33,13 @@ class AuthController extends Controller
 
     }
 
+    /**
+     * Realiza o logoff de um usuário autenticado
+     *
+     * @param  \Request  $request
+     * @return response
+     *
+     */
     public function logout(Request $request)
     {
         $token = $request->user()->token();
